@@ -1,6 +1,6 @@
 from preprocess_pranjalSagar import utils
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 # these methods can be accessed by used from outside
 # as these methods name do not have starting underscroe
@@ -67,10 +67,10 @@ def make_base(x):
 	return utils.make_base(x)	
 
 def remove_common_words(x, n=20):
-	return utils.remove_common_words(x, n=20)	
+	return utils.remove_common_words(x, n)	
 
 def remove_rarewords(x, n=20):
-	return utils.remove_rarewords(x, n=20)	
+	return utils.remove_rarewords(x, n)	
 
 def spelling_correctin(x):
 	return utils.spelling_correctin(x)
