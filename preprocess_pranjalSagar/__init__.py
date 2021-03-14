@@ -1,6 +1,6 @@
 from preprocess_pranjalSagar import utils
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 # these methods can be accessed by used from outside
 # as these methods name do not have starting underscroe

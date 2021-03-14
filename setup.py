@@ -8,7 +8,7 @@ setuptools.setup(
 	# name of python package (should be unique)
 	name = 'preprocess_pranjalSagar',
 	# can be anything
-	version = '0.0.2',
+	version = '0.0.3',
 	author = 'Pranjal Sagar',
 	author_email = 'pranjalsagar2001@gmail.com',
 	description = 'This is preprocessing package',
