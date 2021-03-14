@@ -10,6 +10,9 @@ from bs4 import BeautifulSoup
 import unicodedata
 from textblob import TextBlob
 
+# loading nlp model
+nlp = spacy.load('en_core_web_sm')
+
 # starting underscore (i.e. _ ) in method name indicates that these are inner or private methods of the package
 # & we can't acess them from outside of the package
 
@@ -47,7 +50,7 @@ def _get_uppercases_counts(x):
 def _to_lower(x):
 	return str(x).lower()
 
-def _get_cont_exp(x):
+def _cont_exp(x):
 	contractions = { 
 	"ain't": "am not",
 	"aren't": "are not",
@@ -196,19 +199,19 @@ def _make_base(x):
 		x_list.append(lemma)
 	return ' '.join(x_list)
 
-def _remove_common_words(x, n=20):    
-	text = x.split()
-	freq_comm = pd.Series(text).value_counts()
-	fn = freq_comm[:n]
+def _get_value_counts(df, col):
+	text = ' '.join(df[col])
+	text = text.split()
+	freq = pd.Series(text).value_counts()
+	return freq
 
+def _remove_common_words(x, freq, n=20):    
+	fn = freq[:n]
 	x = ' '.join([t for t in x.split() if t not in fn])
 	return x
 
-def _remove_rarewords(x, n=20):
-	text = x.split()
-	freq_comm = pd.Series(text).value_counts()
-	fn = freq_comm.tail(n)
-
+def _remove_rarewords(x, freq, n=20):
+	fn = freq.tail(n)
 	x = ' '.join([t for t in x.split() if t not in fn])
 	return x
 
