@@ -2,7 +2,7 @@ from preprocess_pranjalSagar import utils
 
 __version__ = '0.0.3'
 
-# these methods can be accessed by used from outside
+# these methods can be accessed by user from outside
 # as these methods name do not have starting underscroe
 # methods will be called from 'utils.py'
 
@@ -64,7 +64,7 @@ def remove_stopwords(x):
 	return utils._remove_stopwords(x)
 
 def make_base(x):
-	return utils.make_base(x)	
+	return utils._make_base(x)	
 
 def get_value_counts(df, col):
 	return utils._get_value_counts(df, col)
